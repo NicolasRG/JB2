@@ -22,7 +22,11 @@ int main(){
     bool gameOver = false;
     do{
         //draw a card
-        Card cardt = deck->drawCard();
+        Card cardt;
+        cardt = deck->drawCard();
+        cout << "drew card" << endl;
+        hand->printHand();
+        cout << "drew card" << endl;
         try{
             hand->addCardToHand(cardt);
         }catch(Error err){
