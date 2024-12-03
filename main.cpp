@@ -15,20 +15,21 @@ int main(){
     Deck* deck = new Deck();
     Hand* hand = new Hand();
     //draw cards
-    Card card;
+    Card* card;
     card = deck->drawCard();
     hand->addCardToHand(card);
 
     bool gameOver = false;
     do{
+        deck->printDeck();
         //draw a card
-        Card cardt;
-        cardt = deck->drawCard();
-        cout << "drew card" << endl;
+        Card* cardptr = new Card();
+        cardptr = deck->drawCard();
+        cout << "drew card" << &cardptr<< endl;
         hand->printHand();
-        cout << "drew card" << endl;
+        cout << "drew card" << &cardptr<<endl;
         try{
-            hand->addCardToHand(cardt);
+            (*hand).addCardToHand(cardptr);
         }catch(Error err){
             cout<< err.message <<endl;
             cout<< "you broke my game, leave"<<endl;

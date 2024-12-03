@@ -49,9 +49,9 @@ class Hand{
 
     public:
 
-    int addCardToHand(Card card){
+    int addCardToHand(Card* card){
         //get value of card
-        int val = card.getValue();
+        int val = card->getValue();
         int size = cards.size();
         std::cout << size <<std::endl;
         if(size > 5){
@@ -59,8 +59,8 @@ class Hand{
             throw new Error("Issue wixwwth hand action", "Hand Is Full You Bum!!");
         }
         //store card
-        std::cout << "New card : " << card.getName() << std::endl;
-        cards.push_back(&card);
+        std::cout << "New card : " << card->getName() << std::endl;
+        cards.push_back(card);
         // update total and return it
         calculateTotal();
         std::cout << "Total : " << total << std::endl;

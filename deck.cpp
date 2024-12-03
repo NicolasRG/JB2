@@ -58,18 +58,11 @@ class Deck{
         
         std::cout<< "Shuffling Deck Deck" << std::endl;  
         for(int i = 0; i < 10000; i++){
-            int swapa = std::rand() % 53;
-            int swapb = std::rand() % 53;
+            int swapa = std::rand() % 54;
+            int swapb = std::rand() % 54;
             std::swap(cards[swapa], cards[swapb]);
         }
         std::cout<< "Shuffled Deck" << std::endl;  
-    }
-
-    void printDeck(){
-        for(int i = 0; i < cards.size(); i++){
-            std::cout << i <<" : " +(*cards[i]).getName() << std::endl;
-        }
-         std::cout << "Supreme cnch wrap" << std::endl;
     }
 
     public:
@@ -81,10 +74,19 @@ class Deck{
         printDeck();
     }
 
-    Card drawCard(){
+    Card* drawCard(){
         Card* card = cards.back();
+        std::cout<< "Drew Card ptr"<< card <<std::endl;
         cards.pop_back();
-        return *card;
+        std::cout<< "Drew Card ptr :  After popback"<< card <<std::endl;
+        return card;
+    }
+
+     void printDeck(){
+        for(int i = 0; i < cards.size(); i++){
+            std::cout << i <<" : " +(*cards[i]).getName() << cards[i] << std::endl;
+        }
+         std::cout << "Supreme cnch wrap" << std::endl;
     }
 
 };
