@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
     cout<<"Doing a thing"<<endl;
-    //calculate cpu answer
+    //calculate cpu answern sick
     std::srand(time(0));
     int cpuAnswer = rand()%10 + 11;
     //create game loop
